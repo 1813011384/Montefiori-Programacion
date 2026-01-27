@@ -12,12 +12,10 @@
 </head>
 <body>
 
-    <script type="module">
-  // Import Firebase
+  <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
   import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
-  // Configuración Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyCOfjy9Sp04BHmy87mizChgZ-O7MvEuR1A",
     authDomain: "prueba-3-35ae8.firebaseapp.com",
@@ -27,18 +25,18 @@
     appId: "1:363743180969:web:e5505be69e883ceaba51b8"
   };
 
-  // Inicializar Firebase
-  const app = initializeApp(firebaseConfig);
+  async function init() {
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-  // Inicializar Firestore
-  const db = getFirestore(app);
+    const querySnapshot = await getDocs(collection(db, "productos"));
 
-  // Leer colección "productos"
-  const querySnapshot = await getDocs(collection(db, "productos"));
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, "=>", doc.data());
+    });
+  }
 
-  querySnapshot.forEach((doc) => {
-    console.log(doc.id, "=>", doc.data());
-  });
+  init();
 </script>
   </body>
 </html>
