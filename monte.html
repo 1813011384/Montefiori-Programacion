@@ -29,7 +29,7 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-Firestore db = FirestoreClient.getFirestore();
+Firestore db = app.getFirestore();
     
     db.collection("productos").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
