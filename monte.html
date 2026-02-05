@@ -40,7 +40,8 @@ const q = query(
   collection(db, "Visitas"),
   where("idUsuario", "==", sessionStorage.getItem("idUsuario"))
 );
-    q.forEach((doc) => {
+      const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
       console.log(doc.id, "=>", doc.data());
     });
   }
