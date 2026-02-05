@@ -54,9 +54,13 @@
 
       if (!snapshot.empty) {
         // Login correcto
-          console.log(snapshot.usuario);
+          console.log(snapshot.[0]);
+          let doc=snapshot.[0];
+          let docid=doc.id;
+          let docdatos=doc.data();
         sessionStorage.setItem("auth", "ok");
-        sessionStorage.setItem("user", usuario);
+          sessionStorage.setItem("iduser", docid);
+        sessionStorage.setItem("user", docdatos.usuario);
 
         window.location.href = "monte.html";
       } else {
