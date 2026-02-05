@@ -54,10 +54,10 @@
 
       if (!snapshot.empty) {
         // Login correcto
-          console.log(snapshot.[0]);
-          /*let doc=snapshot.[0];
+          console.log(snapshot.docs[0]);
+          let doc=snapshot.docs[0];
           let docid=doc.id;
-          let docdatos=doc.data();*/
+          let docdatos=doc.data();
         sessionStorage.setItem("auth", "ok");
           sessionStorage.setItem("idusuario", docid);
         sessionStorage.setItem("usuario", docdatos.usuario);
