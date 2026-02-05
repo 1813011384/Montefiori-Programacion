@@ -34,7 +34,7 @@
   async function init() {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-
+console.log(sessionStorage.getItem("idusuario"));
     //const querySnapshot = await getDocs(collection(db, "productos"));
 const q = query(
   collection(db, "Visitas"),
