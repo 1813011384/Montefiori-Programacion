@@ -15,6 +15,12 @@
   <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
   import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
+    import {
+  collection,
+  getDocs,
+  query,
+  where
+} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCOfjy9Sp04BHmy87mizChgZ-O7MvEuR1A",
@@ -29,8 +35,11 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    const querySnapshot = await getDocs(collection(db, "productos"));
-
+    //const querySnapshot = await getDocs(collection(db, "productos"));
+const q = query(
+  collection(db, "visitas"),
+  where("idUsuario", "==", sessionStorage.getItem("idUsuario"))
+);
     querySnapshot.forEach((doc) => {
       console.log(doc.id, "=>", doc.data());
     });
