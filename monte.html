@@ -38,7 +38,7 @@
     //const querySnapshot = await getDocs(collection(db, "productos"));
 const q = query(
   collection(db, "Visitas"),
-  where("idUsuario", "==", sessionStorage.getItem("idUsuario"))
+  where("idUsuario", "==", sessionStorage.getItem("idusuario"))
 );
       const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
