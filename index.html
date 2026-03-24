@@ -3281,7 +3281,7 @@ function renderizartabla(turnosconrango){
     rangoshoras7a22.map(r => {
         let rangodeterminado=formatearHora(r.inicio)+" - "+formatearHora(r.fin);
         let trrrr=document.createElement("tr");
-        trrrr.innerHTML=`<td>${rangodeterminado}</td>`;
+        trrrr.innerHTML=`<td><strong>${rangodeterminado}</strong></td>`;
         
         let td=null;
         todosdias.map( d =>{
