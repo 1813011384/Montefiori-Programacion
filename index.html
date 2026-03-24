@@ -3262,7 +3262,7 @@ function renderizartabla(turnosconrango){
         const mes = String(dd.getMonth() + 1).padStart(2, '0'); // mês começa do 0
         const dia = String(dd.getDate()).padStart(2, '0');
         const dia2=diasSemana[dd.getDay()].substring(0,3);
-        const dataFormatada = `${dia2} ${dia}/${mes}/${año}`;
+        const dataFormatada = `${dia2} ${dia}/${mes}/${ano}`;
 
         let th= document.createElement("th");
         th.innerHTML=`${dataFormatada}`
