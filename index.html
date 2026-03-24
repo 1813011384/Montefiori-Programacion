@@ -3257,11 +3257,12 @@ function renderizartabla(turnosconrango){
     let tabla1theadtr=document.querySelector("#mitabla1 thead tr");
     tabla1theadtr.innerHTML=`<th>Rango Horario</th>`
     todosdias.forEach(dd=>{
+        const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
         const ano = dd.getFullYear();
         const mes = String(dd.getMonth() + 1).padStart(2, '0'); // mês começa do 0
         const dia = String(dd.getDate()).padStart(2, '0');
-
-        const dataFormatada = `${ano}-${mes}-${dia}`;
+        const dia2=diasSemana[dd.getDay()];
+        const dataFormatada = `${dia2} ${mes}-${dia}`;
 
         let th= document.createElement("th");
         th.innerHTML=`${dataFormatada}`
